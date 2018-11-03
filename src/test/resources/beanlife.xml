@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+      ">
+    <bean id="people" init-method="inni" destroy-method="destory" scope="singleton" class="com.yx1996.sp.com.beanlife.people">
+        <!--init-method可以配置自己的方法在实现类中（运行在before与after之间）-->
+        <!--<constructor-arg value="" ></constructor-arg>-->
+        <!--以上的方法可以调用有参构造方法-->
+        <property name="name" value="小红"></property>
+    </bean>
+    <!--<bean id="people1" scope="singleton" class="com.yx1996.sp.com.beanlife.people">-->
+        <!--&lt;!&ndash;<constructor-arg value="" ></constructor-arg>&ndash;&gt;-->
+        <!--&lt;!&ndash;以上的方法可以调用有参构造方法&ndash;&gt;-->
+        <!--<property name="name" value="小话"></property>-->
+    <!--</bean>-->
+    <!--<bean id="student" class="com.yx1996.sp.com.testioc.Student">-->
+        <!--<property name="name" value="小明"></property>-->
+    <!--</bean>-->
+    <bean id="mybeanpostprocess" class="com.yx1996.sp.com.beanlife.MyBeanPostProcess"/>
+<!--<bean id="techer" class="com.yx1996.sp.com.beanlife.techer">-->
+    <!--<property name="name" value="张老师"></property>-->
+<!--</bean>-->
+
+</beans>

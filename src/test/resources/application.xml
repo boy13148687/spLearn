@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+      ">
+
+    <!--
+    id：对象的唯一标示,一般情况下取类的名称
+    class：该对象的绝对路径（类路径包名.类名）
+    -->
+    <bean id="people" class="com.yx1996.sp.people">
+        <!--
+        name与属性名绝对一致
+        -->
+        <property name="name">
+            <value>liwu1</value>
+        </property>
+        <property name="baibai" ref="baibai"></property>
+    </bean>
+    <bean id="baibai" class="com.yx1996.sp.baibai">
+        <property name="name" value="小明"></property>
+    </bean>
+    <!--<bean id="changeletter" class="com.yx1996.sp.com.inter.UpperLetter">-->
+    <!--<property name="str" value="andadsad"></property>-->
+    <!--</bean>-->
+    <bean id="changeletter" class="com.yx1996.sp.com.inter.LowLetter">
+        <property name="str" value="SsDSDSDS"></property>
+    </bean>
+    <!--<bean id="validateUser" class="com.yx1996.sp.com.inter.chackUser1">-->
+    <!--<property name="name" value="张三"></property>-->
+    <!--</bean>-->
+    <bean id="validateUser" class="com.yx1996.sp.com.inter.chackUser2">
+        <property name="name" value="李四"></property>
+    </bean>
+    <!--scope：使用singleton每次获取对象时会调用构造方法，而使用prototype时不会调用构造方法-->
+    <bean id="student" scope="prototype" class="com.yx1996.sp.com.testioc.Student">
+        <property name="name" value="小猪佩奇"></property>
+    </bean>
+
+</beans>

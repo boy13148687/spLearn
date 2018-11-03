@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+      ">
+    <bean id="department" class="com.yx1996.sp.com.assemblingbean.Department">
+        <property name="name" value="财务部"></property>
+        <property name="empName">
+            <!--给数组注入值-->
+            <list>
+                <value>张三</value>
+                <value>李四</value>
+                <value>老王</value>
+            </list>
+        </property>
+        <!--给list注入值-->
+        <property name="employees">
+            <list>
+                <ref bean="emp1" />
+                <ref bean="emp2" />
+                <ref bean="emp2" />
+                <ref bean="emp3" />
+                <!--list可以重复输入，且不会覆盖-->
+            </list>
+        </property>
+    </bean>
+    <bean id="emp1" class="com.yx1996.sp.com.assemblingbean.Employee">
+        <property name="name" value="上海"></property>
+    </bean>
+    <bean id="emp2" class="com.yx1996.sp.com.assemblingbean.Employee">
+        <property name="name" value="深圳"></property>
+    </bean>
+    <bean id="emp3" class="com.yx1996.sp.com.assemblingbean.Employee">
+        <property name="name" value="广州"></property>
+    </bean>
+
+</beans>
